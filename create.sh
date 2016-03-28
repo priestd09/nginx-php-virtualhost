@@ -17,15 +17,14 @@ fi
 # create user
 while [[ -z "$USERNAME" ]]
 do
-  read -s -p "Please specify the username for this site: " $USERNAME
+  read -p "Please specify the username for this site: " USERNAME
 done
 
 HOMEDIR="/home/$USERNAME"
 adduser $USERNAME
 
 # root dir
-echo "Enter the new web root dir [/home/$USERNAME/web/public]: "
-read ROOTDIR
+read -p "Enter the new web root dir [/home/$USERNAME/web/public]: " ROOTDIR
 
 if [ -z "ROOTDIR" ]
     ROOTDIR=$HOMEDIR/web/public
